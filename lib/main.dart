@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:soundpool/soundpool.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,8 +23,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class XylophoneApp extends StatelessWidget {
+class XylophoneApp extends StatefulWidget {
   const XylophoneApp({super.key});
+
+  @override
+  State<XylophoneApp> createState() => _XylophoneAppState();
+}
+
+class _XylophoneAppState extends State<XylophoneApp> {
+  Soundpool pool = Soundpool.fromOptions(options: SoundpoolOptions.kDefault);
 
   @override
   Widget build(BuildContext context) {
